@@ -1,3 +1,7 @@
+# Data directories
+cifar_*/
+
+
 .DS_Store
 __pycache__/
 
