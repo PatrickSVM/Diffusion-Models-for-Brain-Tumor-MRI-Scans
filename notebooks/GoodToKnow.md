@@ -8,3 +8,6 @@ Check this [link](https://unix.stackexchange.com/questions/45913/is-there-a-way-
 **Get PID and kill process**
 
 ps u, then kill PID1 PID2 ...
+
+conda list
+conda remove
