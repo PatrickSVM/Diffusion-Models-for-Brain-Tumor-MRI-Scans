@@ -37,3 +37,16 @@ IMPORTANT: Check how the data is fed - channel before or after?
 
 Sample new ones with the checkpoint.
 https://github.com/openai/improved-diffusion
+
+
+**Github setup**
+git remote remove origin
+git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git
+
+
+**Time of creation**
+stat ./file
+
+40 min per 10000 steps
+
+df -H is disk space

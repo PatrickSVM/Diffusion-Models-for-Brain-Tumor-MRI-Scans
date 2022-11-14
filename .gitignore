@@ -1,6 +1,7 @@
 # Data directories
 cifar_*/
 FirstRun/
+Checkpoint*/
 
 .DS_Store
 __pycache__/
