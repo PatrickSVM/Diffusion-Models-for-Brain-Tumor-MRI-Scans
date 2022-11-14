@@ -439,7 +439,7 @@ def mpi_weighted_mean(comm, local_name2valcount):
         return {}
 
 
-def configure(dir=None, format_strs=None, comm=None, log_suffix=""):
+def configure(dir=None, format_strs=None, comm=None, log_suffix=""):   # Configuration of out_dir
     """
     If comm is provided, average all numerical stats across that comm
     """

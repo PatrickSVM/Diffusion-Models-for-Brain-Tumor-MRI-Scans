@@ -20,8 +20,9 @@ def main():
     args = create_argparser().parse_args()
 
     dist_util.setup_dist()
-    logger.configure()
 
+    logger.configure(dir=args.out_dir) # Add out_dir as location to store
+    
     logger.log("creating model and diffusion...")
     model, diffusion = create_model_and_diffusion(
         **args_to_dict(args, model_and_diffusion_defaults().keys())
@@ -58,7 +59,7 @@ def main():
 
 
 def create_argparser():
-    defaults = dict(
+    defaults = dict( # Default dictionary 
         data_dir="",
         schedule_sampler="uniform",
         lr=1e-4,
@@ -68,10 +69,11 @@ def create_argparser():
         microbatch=-1,  # -1 disables microbatches
         ema_rate="0.9999",  # comma-separated list of EMA values
         log_interval=10,
-        save_interval=10000,
+        save_interval=10000, # Save after 10000 episodes
         resume_checkpoint="",
         use_fp16=False,
         fp16_scale_growth=1e-3,
+        out_dir="Checkpoints",
     )
     defaults.update(model_and_diffusion_defaults())
     parser = argparse.ArgumentParser()

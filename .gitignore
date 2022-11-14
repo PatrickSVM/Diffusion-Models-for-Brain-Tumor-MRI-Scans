@@ -1,6 +1,6 @@
 # Data directories
 cifar_*/
-
+FirstRun/
 
 .DS_Store
 __pycache__/

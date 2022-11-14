@@ -24,7 +24,7 @@ def main():
     args = create_argparser().parse_args()
 
     dist_util.setup_dist()
-    logger.configure()
+    logger.configure(dir=args.sample_dir) # Added sample directory
 
     logger.log("creating model and diffusion...")
     model, diffusion = create_model_and_diffusion(
@@ -95,6 +95,7 @@ def create_argparser():
         batch_size=16,
         use_ddim=False,
         model_path="",
+        sample_dir="Samples"
     )
     defaults.update(model_and_diffusion_defaults())
     parser = argparse.ArgumentParser()
