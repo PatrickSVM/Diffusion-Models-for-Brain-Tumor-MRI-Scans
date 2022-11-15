@@ -2,6 +2,7 @@
 cifar_*/
 FirstRun/
 Checkpoint*/
+Samples_CIFAR/
 
 .DS_Store
 __pycache__/

@@ -1,45 +1,6 @@
-Logging to Checkpoint_CIFAR
+Logging to Samples_CIFAR
 creating model and diffusion...
-creating data loader...
-training...
-------------------------
-| grad_norm | 1.99     |
-| loss      | 0.996    |
-| loss_q0   | 0.996    |
-| mse       | 0.996    |
-| mse_q0    | 0.996    |
-| samples   | 1        |
-| step      | 0        |
-------------------------
-saving model 0...
-saving model 0.9999...
-------------------------
-| grad_norm | 0.657    |
-| loss      | 0.0724   |
-| loss_q0   | 0.143    |
-| loss_q1   | 0.0471   |
-| loss_q2   | 0.039    |
-| loss_q3   | 0.0591   |
-| mse       | 0.0724   |
-| mse_q0    | 0.143    |
-| mse_q1    | 0.0471   |
-| mse_q2    | 0.039    |
-| mse_q3    | 0.0591   |
-| samples   | 1e+03    |
-| step      | 1e+03    |
-------------------------
-------------------------
-| grad_norm | 0.32     |
-| loss      | 0.0234   |
-| loss_q0   | 0.071    |
-| loss_q1   | 0.0147   |
-| loss_q2   | 0.00468  |
-| loss_q3   | 0.00281  |
-| mse       | 0.0234   |
-| mse_q0    | 0.071    |
-| mse_q1    | 0.0147   |
-| mse_q2    | 0.00468  |
-| mse_q3    | 0.00281  |
-| samples   | 2e+03    |
-| step      | 2e+03    |
-------------------------
+sampling...
+created 128 samples
+saving to Samples_CIFAR/samples_128x64x64x3.npz
+sampling complete

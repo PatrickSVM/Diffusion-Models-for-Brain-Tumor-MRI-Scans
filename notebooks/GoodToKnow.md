@@ -8,6 +8,7 @@ Check this [link](https://unix.stackexchange.com/questions/45913/is-there-a-way-
 **Get PID and kill process**
 
 ps u, then kill PID1 PID2 ...
+Check GPU ones with nvidia-smi, kill PID
 
 conda list
 conda remove
