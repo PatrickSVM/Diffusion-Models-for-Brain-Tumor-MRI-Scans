@@ -1,4 +1,5 @@
 # Data directories
+brats2020*
 cifar_*/
 FirstRun/
 Checkpoint*/
