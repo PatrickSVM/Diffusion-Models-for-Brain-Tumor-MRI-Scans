@@ -65,7 +65,7 @@ def _list_image_files_recursively(data_dir):
     return results
 
 
-class ImageDataset(Dataset):
+class ImageDataset(Dataset):  # Here is DataLoader BRATS
     def __init__(self, resolution, image_paths, classes=None, shard=0, num_shards=1):
         super().__init__()
         self.resolution = resolution

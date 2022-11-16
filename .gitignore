@@ -4,6 +4,8 @@ cifar_*/
 FirstRun/
 Checkpoint*/
 Samples_CIFAR/
+output.txt
+Samples_T1CE/
 
 .DS_Store
 __pycache__/

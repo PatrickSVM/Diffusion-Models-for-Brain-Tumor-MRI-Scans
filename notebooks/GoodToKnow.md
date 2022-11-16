@@ -51,3 +51,8 @@ stat ./file
 40 min per 10000 steps
 
 df -H is disk space
+ls dir | wc -l
+
+
+**Questions**
+What does a step indicate? How many pictures per step? How many steps does it take to do one full epoch? How many of the images did the model see during training?
