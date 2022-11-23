@@ -300,7 +300,7 @@ class UNetModel(nn.Module):
 
     def __init__(
         self,
-        in_channels,
+        in_channels,  # This par specifies input channels
         model_channels,
         out_channels,
         num_res_blocks,

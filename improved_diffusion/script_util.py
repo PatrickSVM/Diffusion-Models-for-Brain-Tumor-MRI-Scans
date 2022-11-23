@@ -32,6 +32,7 @@ def model_and_diffusion_defaults():
         rescale_learned_sigmas=True,
         use_checkpoint=False,
         use_scale_shift_norm=True,
+        in_channels=3,
     )
 
 
@@ -55,6 +56,7 @@ def create_model_and_diffusion(
     rescale_learned_sigmas,
     use_checkpoint,
     use_scale_shift_norm,
+    in_channels,
 ):
     model = create_model(
         image_size,
@@ -68,6 +70,7 @@ def create_model_and_diffusion(
         num_heads_upsample=num_heads_upsample,
         use_scale_shift_norm=use_scale_shift_norm,
         dropout=dropout,
+        in_channels=in_channels,
     )
     diffusion = create_gaussian_diffusion(
         steps=diffusion_steps,
@@ -95,6 +98,7 @@ def create_model(
     num_heads_upsample,
     use_scale_shift_norm,
     dropout,
+    in_channels, # Added
 ):
     if image_size == 256:
         channel_mult = (1, 1, 2, 2, 4, 4)
@@ -110,9 +114,9 @@ def create_model(
         attention_ds.append(image_size // int(res))
 
     return UNetModel(
-        in_channels=3,
+        in_channels=in_channels, # Before was 3
         model_channels=num_channels,
-        out_channels=(3 if not learn_sigma else 6),
+        out_channels=(in_channels if not learn_sigma else in_channels*2), # Added, output channels need to be adjusted too 
         num_res_blocks=num_res_blocks,
         attention_resolutions=tuple(attention_ds),
         dropout=dropout,
