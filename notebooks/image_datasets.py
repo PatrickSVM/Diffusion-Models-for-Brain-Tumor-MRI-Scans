@@ -5,9 +5,8 @@ import numpy as np
 from torch.utils.data import DataLoader, Dataset
 
 
-
 def load_data(
-    *, data_dir, batch_size, image_size, class_cond=False, deterministic=False
+    *, data_dir, batch_size, image_size, grayscale, class_cond=False, deterministic=False
 ):
     """
     For a dataset, create a generator over (images, kwargs) pairs.
@@ -41,6 +40,7 @@ def load_data(
         classes=classes,
         shard=MPI.COMM_WORLD.Get_rank(),
         num_shards=MPI.COMM_WORLD.Get_size(),
+        grayscale=grayscale
     )
     if deterministic:
         loader = DataLoader(
@@ -67,17 +67,17 @@ def _list_image_files_recursively(data_dir):
 
 
 class ImageDataset(Dataset): 
-    def __init__(self, resolution, image_paths, classes=None, shard=0, num_shards=1):
+    def __init__(self, resolution, image_paths, classes=None, shard=0, num_shards=1, grayscale=False):
         super().__init__()
         self.resolution = resolution
         self.local_images = image_paths[shard:][::num_shards]
         self.local_classes = None if classes is None else classes[shard:][::num_shards]
+        self.grayscale = grayscale
 
     def __len__(self):
         return len(self.local_images)
 
     def __getitem__(self, idx):
-        print(idx)
         path = self.local_images[idx]
         with bf.BlobFile(path, "rb") as f:
             pil_image = Image.open(f)
@@ -96,8 +96,10 @@ class ImageDataset(Dataset):
             tuple(round(x * scale) for x in pil_image.size), resample=Image.BICUBIC
         )
 
-
-        arr = np.array(pil_image.convert("RGB"))
+        if self.grayscale:
+            arr = np.array(pil_image)
+        else:
+            arr = np.array(pil_image.convert("RGB"))
         crop_y = (arr.shape[0] - self.resolution) // 2
         crop_x = (arr.shape[1] - self.resolution) // 2
         arr = arr[crop_y : crop_y + self.resolution, crop_x : crop_x + self.resolution]
@@ -107,59 +109,3 @@ class ImageDataset(Dataset):
         if self.local_classes is not None:
             out_dict["y"] = np.array(self.local_classes[idx], dtype=np.int64)
         return np.transpose(arr, [2, 0, 1]), out_dict
-
-
-
-
-############## Custom data loader and DataSet class for the BRATS dataset ##############
-
-
-class load_channels_from_dir(Dataset):
-    """Load each channel from a different directory."""
-
-    def __init__(self, channel_paths, transform=None, return_class=False):
-        super().__init__()
-        self.channel_paths = channel_paths # List with lists of full paths for each image-channel
-        self.num_channel = len(channel_paths[0]) # Number of channels to include
-        self.transform = transform
-        self.return_class = return_class
-
-    def __len__(self):
-        return len(self.channel_paths)
-
-    def __getitem__(self, idx):
-        if torch.is_tensor(idx):
-            idx = idx.tolist()
-        
-        # Fetch all channels
-        all_chan = [] # Store each channel tensor in list
-        for c in range(self.num_channel):
-            # Load image channel
-            img_path = self.channel_paths[idx][c]
-            img = io.imread(img_path) # Size: (256,256)
-
-            # Normalize in PyTorch manner img/127.5 - 1 so range -1,1
-            img = img/127.5 - 1
-            
-            # Transform to tensor and unsqueeze in first dim
-            img = torch.Tensor(img)
-            
-            if len(img.shape)==4:
-                img = img.unsqueeze(dim=0) # Remove redundant dimension, depending on Torch version
-
-            all_chan.append(img)
-
-        if len(all_chan)==1:
-            # If only one channel, add dummy dimension 
-            final_img = all_chan[0][None,:,:]
-        else:
-            # Create and return tensor of size (Channels, Size, Size) 
-            final_img = torch.stack(all_chan)
-
-
-        #if self.transform:
-        #    sample = self.transform(sample)
-        if self.return_class:
-            return final_img, 0
-        else:
-            return final_img

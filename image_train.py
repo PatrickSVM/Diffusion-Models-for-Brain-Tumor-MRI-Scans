@@ -5,7 +5,12 @@ Train a diffusion model on images.
 import argparse
 
 from improved_diffusion import dist_util, logger
-from improved_diffusion.image_datasets import load_data
+
+#from improved_diffusion.image_datasets import load_data
+
+# Replace with custiom BRATS loader
+from BRATS_dataset import load_data
+
 from improved_diffusion.resample import create_named_schedule_sampler
 from improved_diffusion.script_util import (
     model_and_diffusion_defaults,

@@ -1,4 +1,6 @@
 # Data directories
+notebooks/TestIdx/
+TestIdx/
 brats2020*
 cifar_*/
 FirstRun/
@@ -6,6 +8,7 @@ Checkpoint*/
 Samples_CIFAR/
 output.txt
 Samples_T1CE/
+Muell/
 
 .DS_Store
 __pycache__/

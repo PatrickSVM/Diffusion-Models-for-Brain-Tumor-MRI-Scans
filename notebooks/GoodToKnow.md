@@ -53,6 +53,6 @@ stat ./file
 df -H is disk space
 ls dir | wc -l
 
-
+We can unpack a list of args with *!
 **Questions**
 What does a step indicate? How many pictures per step? How many steps does it take to do one full epoch? How many of the images did the model see during training?
