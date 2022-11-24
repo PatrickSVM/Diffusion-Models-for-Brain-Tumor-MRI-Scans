@@ -9,6 +9,7 @@ Samples_CIFAR/
 output.txt
 Samples_T1CE/
 Muell/
+Samples*/
 
 .DS_Store
 __pycache__/
