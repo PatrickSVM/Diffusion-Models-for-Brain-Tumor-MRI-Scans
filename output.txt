@@ -1,5 +1,13 @@
-Logging to Samples_T1CE_Second_100K
+Logging to Samples_T1CE_SEG_250K
 creating model and diffusion...
 sampling...
 created 8 samples
 created 16 samples
+created 24 samples
+created 32 samples
+created 40 samples
+created 48 samples
+created 56 samples
+created 64 samples
+saving to Samples_T1CE_SEG_250K/samples_64x256x256x2.npz
+sampling complete

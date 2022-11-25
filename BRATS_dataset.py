@@ -6,7 +6,7 @@ import os
 
 #### Specify channels to include ####
 
-CHANNELS = ["T1CE"]
+CHANNELS = ["T1CE", "Seg"]
 ROOT = './brats2020_313subjects_noaugmentation_singlesegmentationchannel_min15percentcoverage'
 
 

@@ -51,7 +51,7 @@ def main():
         )
         sample = sample_fn(
             model,
-            (args.batch_size, 1, args.image_size, args.image_size), # Added, TODO
+            (args.batch_size, 2, args.image_size, args.image_size), # Added, TODO
             clip_denoised=args.clip_denoised,
             model_kwargs=model_kwargs,
         )
