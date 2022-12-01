@@ -56,3 +56,12 @@ ls dir | wc -l
 We can unpack a list of args with *!
 **Questions**
 What does a step indicate? How many pictures per step? How many steps does it take to do one full epoch? How many of the images did the model see during training?
+  
+  
+ Remove without question 
+ rm -r -f miniconda3/
+  
+ ctrl + r = search in terminal 
+  
+wget to download a file in current dir 
+unpack /zip-file 
