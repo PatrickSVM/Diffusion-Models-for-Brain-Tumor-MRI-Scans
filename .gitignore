@@ -1,7 +1,6 @@
 # Data directories
 notebooks/TestIdx/
 brats2020*
-cifar_t*/
 
 Checkpoints/
 output.txt

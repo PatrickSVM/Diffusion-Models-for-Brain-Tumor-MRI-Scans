@@ -32,7 +32,7 @@ def model_and_diffusion_defaults():
         rescale_learned_sigmas=True,
         use_checkpoint=False,
         use_scale_shift_norm=True,
-        in_channels=3,
+        in_channels=3, # TODO
     )
 
 

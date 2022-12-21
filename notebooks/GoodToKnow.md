@@ -65,3 +65,5 @@ What does a step indicate? How many pictures per step? How many steps does it ta
   
 wget to download a file in current dir 
 unpack /zip-file
+
+OPT is the optimizer state!!!
