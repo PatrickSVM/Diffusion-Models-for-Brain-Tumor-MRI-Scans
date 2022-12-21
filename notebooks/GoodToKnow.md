@@ -64,6 +64,4 @@ What does a step indicate? How many pictures per step? How many steps does it ta
  ctrl + r = search in terminal 
   
 wget to download a file in current dir 
-unpack /zip-file 
-
-try to change
+unpack /zip-file
