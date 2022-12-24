@@ -67,3 +67,5 @@ wget to download a file in current dir
 unpack /zip-file
 
 OPT is the optimizer state!!!
+
+How long does it take to sample one vs 2 for example, so is it better to just fill memory entirely? Or is it maybe better to do two batches after another? No should not be the case since part of GPU ram will be idle in this time so inefficient 
