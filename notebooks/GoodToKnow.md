@@ -19,7 +19,7 @@ conda info --all
 ls -a to see all files (also .conda)
 
 du -Sh | sort -rh | head -5  # get 5 biggest directories with estimated size
-
+du - h to see size of directories
 
 **Where are the packages?**
 Definetly after installation in local/pathi619/miniconda3/.pkgs - ther also cache
