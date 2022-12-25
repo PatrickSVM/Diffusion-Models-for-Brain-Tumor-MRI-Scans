@@ -3,7 +3,7 @@ import os
 # Remember to set out_channels in script
 
 MODEL_NAME = "TwoChan_Exp_2"
-SAMPLE_STEPS = [f"0{i}0000" if i<10 else f"{i}0000" for i in range(7,12)]
+SAMPLE_STEPS = [f"0{i}0000" if i<10 else f"{i}0000" for i in range(12,18)]
 MODEL_TYPES = ["ema_0.9999_", "model"]
 
 MODEL_FLAGS="--in_channels 2 --image_size 256 --num_channels 128 --num_res_blocks 2 --num_heads 1 --learn_sigma True --use_scale_shift_norm False --attention_resolutions 16"
