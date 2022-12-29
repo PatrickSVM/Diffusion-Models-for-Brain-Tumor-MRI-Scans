@@ -7,6 +7,6 @@ if __name__ == "__main__":
     DIFFUSION_FLAGS="--diffusion_steps 1000 --noise_schedule linear --rescale_learned_sigmas False --rescale_timesteps False"
     TRAIN_FLAGS="--lr 1e-4 --batch_size 128 --microbatch 7"
     
-    CALL=f"python image_train.py --log_interval 10 --save_interval 10000 --resume_checkpoint Checkpoints/Checkpoint_TwoChan_Exp_3/model010000.pt --out_dir Checkpoints/Checkpoint_{MODEL_NAME} {MODEL_FLAGS} {DIFFUSION_FLAGS} {TRAIN_FLAGS}"
+    CALL=f"python image_train.py --log_interval 10 --save_interval 10000 --resume_checkpoint Checkpoints/Checkpoint_TwoChan_Exp_3/model020000.pt --out_dir Checkpoints/Checkpoint_{MODEL_NAME} {MODEL_FLAGS} {DIFFUSION_FLAGS} {TRAIN_FLAGS}"
     
     os.system(CALL)
