@@ -116,7 +116,7 @@ def create_model(
     return UNetModel(
         in_channels=in_channels, # Before was 3
         model_channels=num_channels,
-        out_channels=(in_channels if not learn_sigma else in_channels*2), # Added, output channels need to be adjusted too 
+        out_channels=(in_channels if not learn_sigma else in_channels*2), # Added, output channels  
         num_res_blocks=num_res_blocks,
         attention_resolutions=tuple(attention_ds),
         dropout=dropout,

@@ -5,7 +5,6 @@ brats2020*
 Checkpoints/
 output.txt
 Samples/
-
 PID_current.txt
 
 .DS_Store
