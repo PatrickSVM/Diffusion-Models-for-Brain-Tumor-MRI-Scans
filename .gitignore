@@ -6,6 +6,7 @@ Checkpoints/
 output.txt
 Samples/
 PID_current.txt
+cifar*
 
 .DS_Store
 __pycache__/
