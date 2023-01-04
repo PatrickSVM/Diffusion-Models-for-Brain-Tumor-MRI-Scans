@@ -1,0 +1,4 @@
+One Channel T1CE with custom BRATS dataset
+Trained for 230K steps 
+Batch size 1
+Epochs 9.8

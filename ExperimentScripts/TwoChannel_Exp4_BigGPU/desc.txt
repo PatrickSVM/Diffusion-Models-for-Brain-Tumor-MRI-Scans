@@ -1,0 +1,6 @@
+Two Channel T1CE with Seg
+Trained for 60K steps 
+Batch size 128
+Epochs 327
+lr 1e-4
+Sampling with respacing
