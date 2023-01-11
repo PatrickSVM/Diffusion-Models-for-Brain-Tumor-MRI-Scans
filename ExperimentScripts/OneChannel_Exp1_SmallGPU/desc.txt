@@ -1,4 +1,0 @@
-One Channel T1CE
-Trained for 100K steps 
-Batch size 1
-Epochs 5

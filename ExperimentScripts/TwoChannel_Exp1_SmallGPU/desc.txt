@@ -1,4 +1,0 @@
-Two Channel T1CE with Seg
-Trained for 250K steps 
-Batch size 1
-Epochs 10.6

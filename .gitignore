@@ -1,6 +1,7 @@
 # Data directories
-notebooks/TestIdx/
 brats2020*
+Literature
+GoodToKnow*
 
 Checkpoints/
 output.txt
