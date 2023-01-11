@@ -28,7 +28,7 @@ The data used for the models in this repository are 2-D slices from patients’ 
 
 We will start by first training a 2-channel model, using the T1CE-channel and the according segmentation mask. We will then proceed with a multi-channel model that will be trained on all five available channels included in the BraTS data volumes. 
 
-All important files connected to the different experiments can be found [here](Experiments)
+All important files connected to the different experiments can be found [here](Experiments).
 
 The following list contains is an overview over the conducted BraTS-experiments and their hyperparameter settings (bs = batch size, lr = learning rate).
 
