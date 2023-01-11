@@ -57,7 +57,7 @@ The results of the experiments and a more detailed description of the theoretica
 
 
 <p align="center">
-<img src="Report/report_images/old_img/Another_Grid.png" align="center" width="75%" height="75%">
+<img src="Report/report_images/old_img/Another_Grid.png" align="center" width="65%" height="65%">
 </p>
 <p align="center">
     Example image-grid from best performing Two-Channel-Model (Exp. 4)
