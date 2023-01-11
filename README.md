@@ -56,7 +56,8 @@ The following list contains is an overview over the conducted BraTS-experiments 
 The results of the experiments and a more detailed description of the theoretical background, the used resources/methods and the general usage of this repository can be found in the [report](Report/Research_Project__Diffusion_Model.pdf). 
 
 
-![Example image-grid from Two-Channel-Model](Report/report_images/old_img/Result_grid_rmd.png)
-
+<p align="center">
+<img src="Report/report_images/old_img/Another_Grid.png" align="center" width="75%" height="75%">
+</p>
 <p align="center">
     Example image-grid from best performing Two-Channel-Model (Exp. 4)
