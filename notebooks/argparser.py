@@ -1,3 +1,5 @@
+# Small experiment with argparser
+
 import argparse
 
 parser = argparse.ArgumentParser(description='Process some integers.')
