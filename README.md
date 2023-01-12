@@ -5,7 +5,7 @@
 <p align="center">
     Example images from One-Channel-Model
     
-This repository is based on a fork from [improved-diffusion](https://github.com/openai/improved-diffusion) and represents the codebase for my research project at LiU. 
+This repository is based on a fork from OpenAI's [improved-diffusion](https://github.com/openai/improved-diffusion) used in their connected [paper](https://arxiv.org/abs/2102.09672) and represents the codebase for my research project at LiU. 
 
 ## Overview
 
